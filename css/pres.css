@@ -3,6 +3,17 @@ body {
 	background-color: #F0F0F0;
 }
 
+.reveal .fa {
+	font-family: 'FontAwesome';
+	font-style: normal;
+}
+
+.reveal .fa-ul {
+	padding-left: 0;
+	margin-left: 2.14285714em;
+	list-style-type: none;
+}
+
 .reveal section img.no-border {
 	border: 0;
 	box-shadow: 0 0 0 rgba(0,0,0,0);
