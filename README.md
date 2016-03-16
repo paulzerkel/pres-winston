@@ -1,5 +1,17 @@
 # pres-winston
-A presentation on the logging library Winston for node.jSTL
+A presentation on the logging library [Winston](https://github.com/winstonjs/winston) for [node.jSTL](http://www.meetup.com/node-jSTL/).
+
+## Overview
+The presentation is built with [Reveal.js](https://github.com/hakimel/reveal.js) and hosted on GitHub Pages: http://paulzerkel.github.io/pres-winston/
+
+Edit the root `index.html` file to change the presentation. All of the files for Reveal.js are in `/reveal`. The gh-pages branch contains the live site.
+
+## Examples
+All examples are in `/examples`. Run `npm install` to install Winston.
+
+1. `loggers.js` - examples of using the default logger and creating custom loggers
+1. `logmessages.js` - examples of logging strings, formatting, and metadata
+1. `containers.js` - examples of using Winston's containers feature which is a good example of granular log control and color output
 
 ## Notes
 Notes for the presentation follows.
