@@ -9,216 +9,216 @@
 		<div class="reveal">
 			<div class="slides">
 				<section>
-				<h1>Logging with Winston</h1>
-				<h3>node.jSTL</h3>
-				<p><small>3/16/2016</small></p>
+					<h1>Logging with Winston</h1>
+					<h3>node.jSTL</h3>
+					<p><small>3/16/2016</small></p>
 				</section>
 
 				<section>
-				<h2>Paul Zerkel</h2>
-				<div class="logo-block">
-					CTO @
-					<img class="no-border" src="images/mi-logo.png">
-				</div>
-				<div class="logo-block">
-					Consultant @
-					<img class="no-border" src="images/sl-logo.png">
-				</div>
+					<h2>Paul Zerkel</h2>
+					<div class="logo-block">
+						CTO @
+						<img class="no-border" src="images/mi-logo.png">
+					</div>
+					<div class="logo-block">
+						Consultant @
+						<img class="no-border" src="images/sl-logo.png">
+					</div>
 				</section>
 
 				<section>
-				<h2>What is <span class="highlight">logging</span>?</h2>
-				<ul>
-					<li>A fact about the state of a program or system</li>
-					<li>Often persisted to some form of storage</li>
-					<li>Frequently includes metadata</li>
-				</ul>
+					<h2>What is <span class="highlight">logging</span>?</h2>
+					<ul>
+						<li>A fact about the state of a program or system</li>
+						<li>Often persisted to some form of storage</li>
+						<li>Frequently includes metadata</li>
+					</ul>
 				</section>
 
 				<section>
-				<h2>Why do we <span class="highlight">want</span> logging?</h2>
-				<ul>
-					<li>Piece together what happened when things go wrong</li>
-					<li>Enables <a href="http://blog.codinghorror.com/exception-driven-development/">Exception Driven Development</a></li>
-					<li>Tracing logs can help you reason about a system in real time</li>
-				</ul>
+					<h2>Why do we <span class="highlight">want</span> logging?</h2>
+					<ul>
+						<li>Piece together what happened when things go wrong</li>
+						<li>Enables <a href="http://blog.codinghorror.com/exception-driven-development/">Exception Driven Development</a></li>
+						<li>Tracing logs can help you reason about a system in real time</li>
+					</ul>
 				</section>
 
 				<section>
-				<h2>Sounds great! How?</h2>
-				<p><code>console.log</code> and <code>console.error</code> are part of Node.js out of the box</p>
-				<p class="fragment"><strong>BUT</strong></p>
-				<p class="fragment">You're gonna have a bad time!</p>
+					<h2>Sounds great! How?</h2>
+					<p><code>console.log</code> and <code>console.error</code> are part of Node.js out of the box</p>
+					<p class="fragment"><strong>BUT</strong></p>
+					<p class="fragment">You're gonna have a bad time!</p>
 				</section>
 
 				<section>
-				<h2>Introducing Winston</h2>
-				<p>"A multi-transport async logging library for Node.js"</p>
-				<p>Available via <a href="https://www.npmjs.com/package/winston">NPM</a> and MIT licensed</p>
-				<p>Designed to have few dependencies while being easy to expand for your needs</p>
+					<h2>Introducing Winston</h2>
+					<p>"A multi-transport async logging library for Node.js"</p>
+					<p>Available via <a href="https://www.npmjs.com/package/winston">NPM</a> and MIT licensed</p>
+					<p>Designed to have few dependencies while being easy to expand for your needs</p>
 				</section>
 
 				<section>
-				<h2>High Level Overview</h2>
-				<p>There are three main concepts in Winston</p>
-				<ul>
-					<li class="fragment">Logs - the contents of the message</li>
-					<li class="fragment">Loggers - how you save a message</li>
-					<li class="fragment">Transports - destinations for logs</li>
-				</ul>
+					<h2>High Level Overview</h2>
+					<p>There are three main concepts in Winston</p>
+					<ul>
+						<li class="fragment">Logs - the contents of the message</li>
+						<li class="fragment">Loggers - how you save a message</li>
+						<li class="fragment">Transports - destinations for logs</li>
+					</ul>
 				</section>
 
 				<section data-transition="fade-out">
-				<h2>Levels</h2>
-				<p>Each <span class="highlight">log</span> has a priority called a <span class="highlight">level</span></p>
-				<table>
-					<thead>
-						<tr>
-							<th>Value</th>
-							<th>Priority</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>0</td>
-							<td>Error</td>
-						</tr>
-						<tr>
-							<td>1</td>
-							<td>Warn</td>
-						</tr>
-						<tr>
-							<td>2</td>
-							<td>Info</td>
-						</tr>
-						<tr>
-							<td>3</td>
-							<td>Verbose</td>
-						</tr>
-						<tr>
-							<td>4</td>
-							<td>Debug</td>
-						</tr>
-						<tr>
-							<td>5</td>
-							<td>Silly</td>
-						</tr>
-					</tbody>
-				</table>
+					<h2>Levels</h2>
+					<p>Each <span class="highlight">log</span> has a priority called a <span class="highlight">level</span></p>
+					<table>
+						<thead>
+							<tr>
+								<th>Value</th>
+								<th>Priority</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>0</td>
+								<td>Error</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>Warn</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>Info</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>Verbose</td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td>Debug</td>
+							</tr>
+							<tr>
+								<td>5</td>
+								<td>Silly</td>
+							</tr>
+						</tbody>
+					</table>
 				</section>
 
 				<section data-transition="fade-in">
-				<h2>Levels</h2>
-				<p>You create a log at a specific level</p>
-				<table>
-					<thead>
-						<tr>
-							<th>Value</th>
-							<th>Priority</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>0</td>
-							<td>Error</td>
-						</tr>
-						<tr>
-							<td>1</td>
-							<td>Warn</td>
-						</tr>
-						<tr class="selected">
-							<td>2</td>
-							<td>Info</td>
-						</tr>
-						<tr>
-							<td>3</td>
-							<td>Verbose</td>
-						</tr>
-						<tr>
-							<td>4</td>
-							<td>Debug</td>
-						</tr>
-						<tr>
-							<td>5</td>
-							<td>Silly</td>
-						</tr>
-					</tbody>
-				</table>
+					<h2>Levels</h2>
+					<p>You create a log at a specific level</p>
+					<table>
+						<thead>
+							<tr>
+								<th>Value</th>
+								<th>Priority</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>0</td>
+								<td>Error</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>Warn</td>
+							</tr>
+							<tr class="selected">
+								<td>2</td>
+								<td>Info</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>Verbose</td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td>Debug</td>
+							</tr>
+							<tr>
+								<td>5</td>
+								<td>Silly</td>
+							</tr>
+						</tbody>
+					</table>
 				</section>
 
 				<section data-transition="fade-in">
-				<h2>Levels</h2>
-				<p>And Loggers and Transports <span class="highlight">filter</span> based on levels</p>
-				<table>
-					<thead>
-						<tr>
-							<th>Value</th>
-							<th>Priority</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr class="selected">
-							<td>0</td>
-							<td>Error</td>
-						</tr>
-						<tr class="selected">
-							<td>1</td>
-							<td>Warn</td>
-						</tr>
-						<tr class="selected">
-							<td>2</td>
-							<td>Info</td>
-						</tr>
-						<tr>
-							<td>3</td>
-							<td>Verbose</td>
-						</tr>
-						<tr>
-							<td>4</td>
-							<td>Debug</td>
-						</tr>
-						<tr>
-							<td>5</td>
-							<td>Silly</td>
-						</tr>
-					</tbody>
-				</table>
+					<h2>Levels</h2>
+					<p>And Loggers and Transports <span class="highlight">filter</span> based on levels</p>
+					<table>
+						<thead>
+							<tr>
+								<th>Value</th>
+								<th>Priority</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="selected">
+								<td>0</td>
+								<td>Error</td>
+							</tr>
+							<tr class="selected">
+								<td>1</td>
+								<td>Warn</td>
+							</tr>
+							<tr class="selected">
+								<td>2</td>
+								<td>Info</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>Verbose</td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td>Debug</td>
+							</tr>
+							<tr>
+								<td>5</td>
+								<td>Silly</td>
+							</tr>
+						</tbody>
+					</table>
 				</section>
 
 				<section>
-				<h2>Why seperating the Logger and Transport?</h2>
-				<p>It allows for a one-to-many relationship between the logger and available transports</p>
-				<p>You can programatically control what messages are logged and where they go</p>
+					<h2>Why seperating the Logger and Transport?</h2>
+					<p>It allows for a one-to-many relationship between the logger and available transports</p>
+					<p>You can programatically control what messages are logged and where they go</p>
 				</section>
 
 				<section>
-				<h2>Loggers</h2>
-				<p>The logger is the object used to log a message</p>
-				<p>It is configured with a level and one or more transports</p>
-				<p>Winston provides a default configuration or you can create your own</p>
-				<p>You application can have many loggers</p>
+					<h2>Loggers</h2>
+					<p>The logger is the object used to log a message</p>
+					<p>It is configured with a level and one or more transports</p>
+					<p>Winston provides a default configuration or you can create your own</p>
+					<p>You application can have many loggers</p>
 				</section>
 
 				<section>
-				<h2>Default Logger</h2>
-				<p>Create a default logger and send two <code>info</code> messages to it</p>
-				<pre><code class="javascript" data-trim>
+					<h2>Default Logger</h2>
+					<p>Create a default logger and send two <code>info</code> messages to it</p>
+					<pre><code class="javascript" data-trim>
 var winston = require('winston');
 
 winston.log('info', 'Hello node.jSTL!');
 winston.info('I am Winston');
 </code></pre>
-				<p>Produces the following on <code>stdout</code>:</p>
-				<pre><code class="nohighlight" data-trim>
+					<p>Produces the following on <code>stdout</code>:</p>
+					<pre><code class="nohighlight" data-trim>
 info: Hello node.jSTL!
 info: I am Winston
 </code></pre>
 				</section>
 
 				<section>
-				<h2>Custom Loggers</h2>
-				<p>It's easy to create a custom logger with your configuration</p>
-				<pre><code class="javascript" data-trim>
+					<h2>Custom Loggers</h2>
+					<p>It's easy to create a custom logger with your configuration</p>
+					<pre><code class="javascript" data-trim>
 var custom = new (winston.Logger)({
 	transports:[
 		new (winston.transports.Console)()
@@ -229,44 +229,44 @@ var custom = new (winston.Logger)({
 custom.warn('potential problem...');
 custom.error('Really big problem!');
 </code></pre>
-				<p>This logger only handles errors</p>
-				<pre><code class="nohighlight" data-trim>
+					<p>This logger only handles errors</p>
+					<pre><code class="nohighlight" data-trim>
 error: Really big problem
 </code></pre>
 				</section>
 
 				<section>
-				<h2>Update Configuration</h2>
-				<p>You can also change the config of an existing logger</p>
-				<pre><code class="javascript" data-trim>
+					<h2>Update Configuration</h2>
+					<p>You can also change the config of an existing logger</p>
+					<pre><code class="javascript" data-trim>
 custom.level = 'warn';
 custom.warn('That\'s no moon...');
 </code></pre>
-				<p>Warn messages will be logged now</p>
-				<pre><code class="nohighlight" data-trim>
+					<p>Warn messages will be logged now</p>
+					<pre><code class="nohighlight" data-trim>
 warn: That's no moon...
 </code></pre>
 				</section>
 
 				<section>
-				<h2>Log Messages</h2>
-				<p>The core of a message is just a string</p>
-				<p>Consider something more meaningful than 'Stuff is happening'</p>
-				<p>User defined metadata can be part of the message as well and Winston can include a timestam and the level of the message</p>
+					<h2>Log Messages</h2>
+					<p>The core of a message is just a string</p>
+					<p>Consider something more meaningful than 'Stuff is happening'</p>
+					<p>User defined metadata can be part of the message as well and Winston can include a timestam and the level of the message</p>
 				</section>
 
 				<section>
-				<h2>String Formatting</h2>
-				<p>There are a variety of ways to format your message</p>
-				<pre><code class="javascript" data-trim>
+					<h2>String Formatting</h2>
+					<p>There are a variety of ways to format your message</p>
+					<pre><code class="javascript" data-trim>
 winston.info('a very basic example');
 winston.info('some', 'various', 'strings');
 winston.info('The %s can\'t lie!', 'log');
 var attendance = 45;
 winston.info(`There were ${attendance} participants`);
 </code></pre>
-				<p>Results in:</p>
-				<pre><code class="nohighlight" data-trim>
+					<p>Results in:</p>
+					<pre><code class="nohighlight" data-trim>
 info: a very basic example
 info: some various strings
 info: The log can't lie!
@@ -275,107 +275,107 @@ info: There were 45 participants
 				</section>
 
 				<section>
-				<h2>Metadata</h2>
-				<p>Metadata can be optionally included with the message</p>
-				<pre><code class="javascript" data-trim>
+					<h2>Metadata</h2>
+					<p>Metadata can be optionally included with the message</p>
+					<pre><code class="javascript" data-trim>
 var sysStatus = { users: 50, queueLength: 5 };
 winston.default.transports.console.prettyPrint = true;
 winston.info('system status', sysStatus);
 </code></pre>
-				<p>Formats the metadata:</p>
-				<pre><code class="nohighlight" data-trim>
+					<p>Formats the metadata:</p>
+					<pre><code class="nohighlight" data-trim>
 info: system status
 { users: 50, queueLength: 5 }
 </code></pre>
 				</section>
 
 				<section>
-				<h2>Transports</h2>
-				<p>Transports are destinations for logs</p>
-				<p>A log may be sent to more than one transport</p>
-				<p>Some transports are included with Winston but others are available as plugins</p>
+					<h2>Transports</h2>
+					<p>Transports are destinations for logs</p>
+					<p>A log may be sent to more than one transport</p>
+					<p>Some transports are included with Winston but others are available as plugins</p>
 				</section>
 
 				<section>
-				<h2>Core Transports</h2>
-				<p>Shipped with Winston and supported by the core team</p>
-				<ul>
-					<li>Console</li>
-					<li>File</li>
-					<li>HTTP</li>
-					<li>Memory (deprecated?)</li>
-				</ul>
+					<h2>Core Transports</h2>
+					<p>Shipped with Winston and supported by the core team</p>
+					<ul>
+						<li>Console</li>
+						<li>File</li>
+						<li>HTTP</li>
+						<li>Memory (deprecated?)</li>
+					</ul>
 				</section>
 
 				<section>
-				<h2>Console Transport</h2>
-				<p>Writes to <code>stdout</code> and <code>stderr</code></p>
-				<p>The log levels for <code>stderr</code> are configurable</p>
-				<p>You can control how metadata is printed</p>
-				<p>Output can be colorized based on the log level</p>
+					<h2>Console Transport</h2>
+					<p>Writes to <code>stdout</code> and <code>stderr</code></p>
+					<p>The log levels for <code>stderr</code> are configurable</p>
+					<p>You can control how metadata is printed</p>
+					<p>Output can be colorized based on the log level</p>
 				</section>
 
 				<section>
-				<h2>File Transport</h2>
-				<p>Used for persisting logs to disk</p>
-				<p>Can be onfigured with a max file size, max number of files, abilitiy to zip archives and more</p>
+					<h2>File Transport</h2>
+					<p>Used for persisting logs to disk</p>
+					<p>Can be onfigured with a max file size, max number of files, abilitiy to zip archives and more</p>
 				</section>
 
 				<section>
-				<h2>Winston More Transports</h2>
-				<p>These transports were originally part of Winston, but were removed in order to keep dependencies to a minimum</p>
-				<p>The transports are still maintained by the core Winston team</p>
-				<ul>
-					<li>CouchDB</li>
-					<li>MongoDB</li>
-					<li>Redis</li>
-					<li>Riak</li>
-					<li>Loggly</li>
-					<li>Log.io</li>
-				</ul>
+					<h2>Winston More Transports</h2>
+					<p>These transports were originally part of Winston, but were removed in order to keep dependencies to a minimum</p>
+					<p>The transports are still maintained by the core Winston team</p>
+					<ul>
+						<li>CouchDB</li>
+						<li>MongoDB</li>
+						<li>Redis</li>
+						<li>Riak</li>
+						<li>Loggly</li>
+						<li>Log.io</li>
+					</ul>
 				</section>
 
 				<section>
-				<h2>3rd Party Transports</h2>
-				<p>Community contributed transports</p>
-				<ul>
-					<li>Email</li>
-					<li>Message Queues</li>
-					<li>Windows Events</li>
-					<li>Much more</li>
-				</ul>
-				<p><code>npm search winston</code></p>
+					<h2>3rd Party Transports</h2>
+					<p>Community contributed transports</p>
+					<ul>
+						<li>Email</li>
+						<li>Message Queues</li>
+						<li>Windows Events</li>
+						<li>Much more</li>
+					</ul>
+					<p><code>npm search winston</code></p>
 				</section>
 
 				<section>
-				<h2>Extras!</h2>
-				<p>These are additional features included with Winston</p>
-				<ul>
-					<li>Profiling</li>
-					<li>Log querying</li>
-					<li>Log streaming</li>
-					<li>CLI presets</li>
-				</ul>
+					<h2>Extras!</h2>
+					<p>These are additional features included with Winston</p>
+					<ul>
+						<li>Profiling</li>
+						<li>Log querying</li>
+						<li>Log streaming</li>
+						<li>CLI presets</li>
+					</ul>
 				</section>
 
 				<section>
-				<h2>Implementation Considerations</h2>
-				<ul>
-					<li>Standardize Logging</li>
-					<li>Plan for log retrieval</li>
-					<li>Environment based settings</li>
-					<li>Purge policy</li>
-					<li>Beware NIH</li>
-				</ul>
+					<h2>Implementation Considerations</h2>
+					<ul>
+						<li>Standardize Logging</li>
+						<li>Plan for log retrieval</li>
+						<li>Environment based settings</li>
+						<li>Purge policy</li>
+						<li>Beware NIH</li>
+					</ul>
 				</section>
 
 				<section>
-				<h2>Thanks!</h2>
-				<ul>
-					<li><a href="https://github.com/paulzerkel/pres-winston">https://github.com/paulzerkel/pres-winston</a></li>
-					<li><a href="mailto:zerkel@gmail.com">zerkel@gmail.com</a></li>
-					<li><a href="https://twitter.com/paulzerkel">@paulzerkel</a></li>
-				</ul>
+					<h2>Thanks!</h2>
+					<ul>
+						<li><a href="https://github.com/paulzerkel/pres-winston">https://github.com/paulzerkel/pres-winston</a></li>
+						<li><a href="mailto:zerkel@gmail.com">zerkel@gmail.com</a></li>
+						<li><a href="https://twitter.com/paulzerkel">@paulzerkel</a></li>
+					</ul>
 				</section>
 			</div>
 		</div>
