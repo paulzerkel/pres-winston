@@ -1,3 +1,8 @@
+body {
+	background: #F0F0F0;
+	background-color: #F0F0F0;
+}
+
 .reveal section img.no-border {
 	border: 0;
 	box-shadow: 0 0 0 rgba(0,0,0,0);
