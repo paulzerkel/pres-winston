@@ -4,7 +4,7 @@ A presentation on the logging library [Winston](https://github.com/winstonjs/win
 ## Overview
 The presentation is built with [Reveal.js](https://github.com/hakimel/reveal.js) and hosted on GitHub Pages: http://paulzerkel.github.io/pres-winston/
 
-Edit the root `index.html` file to change the presentation. All of the files for Reveal.js are in `/reveal`. The gh-pages branch contains the live site.
+Edit the root `index.html` file to change the presentation. All of the files for Reveal.js are in `/reveal`. The master branch contains the live site.
 
 ## Examples
 All examples are in `/examples`. Run `npm install` to install Winston.
